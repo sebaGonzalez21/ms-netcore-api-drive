@@ -1,0 +1,16 @@
+version: "3"
+services:
+  ms-api-drive:
+    build:
+      context: C:/Users/Seba/Desktop/CProyectos/
+      dockerfile: ./ms-api-drive/Dockerfile
+    image: ms-api-drive
+    volumes:
+        # Pass volume named credential
+     - C:\Users\Seba\Downloads\credential:/var/credential
+     - C:\Users\Seba\Desktop\CProyectos\ms-api-drive\HealthCheck\Ui:/src/app/HealthCheck/Ui
+    env_file:
+     - ./ms-drive.env
+    container_name: container-api-drive
+    ports:
+      - "8080:80"
